@@ -8,7 +8,7 @@ describe('Login', () => {
                 .post('/login')
                 .set('Content-Type', 'application/json')
                 .send({
-                    "username": "usuario",
+                    "username": "julio.lima",
                     "senha": "123456"
                 });
             console.log(res.statusCode);
