@@ -1,15 +1,14 @@
 const request = require('supertest');
-const { expect } = require('chai');
-require('dotenv').config();
+const postLogin = require('../fixtures/postLogin.json');
 
-const obterToken = async (usuario, senha) => {
+const obterToken = async () => {
+    const bodyLogin = { ...postLogin }
+
     const respostaLogin = await request(process.env.BASE_URL)
         .post('/login')
         .set('Content-Type', 'application/json')
-        .send({
-            "username": usuario,
-            "senha": senha
-        });
+        .send(bodyLogin);
+
     return respostaLogin.body.token;
 }
 module.exports = {
