@@ -11,9 +11,6 @@ describe('Login', () => {
                     "username": "julio.lima",
                     "senha": "123456"
                 });
-            console.log(res.statusCode);
-            console.log(res.body);
-
             expect(res.statusCode).to.equal(200);
             expect(res.body.token).to.be.a('string');
         });
